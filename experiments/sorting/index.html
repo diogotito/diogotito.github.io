@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Selection Sort</title>
+        
+        <style>
+            body {
+              background-color: gray;
+            }
+            
+            canvas {
+              background-color: lightgray;
+              border: 1px solid black;
+              
+              position: absolute;
+              margin: auto;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <canvas id="canvas" width="500px" height="300px"></canvas>
+        
+        <script>
+            'use strict';
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            
+            /**
+             * Returns an Array with n random integers from min to max
+             */
+            function randomIntegers({min, max, n}) {
+              let result = [];
+              const amplitude = max - min;
+              
+              for (let i = 0; i < n; i++) {
+                result.push( Math.trunc(Math.random() * amplitude + min) );
+              }
+              
+              return result;
+            }
+            
+            /**
+             * Draws a representation of a list of numbers on a given 2d
+             * rendering context
+             */
+            function plotList(list, ctx) {
+              let spacing = (canvas.width) / list.length;
+              let barWidth = spacing * 0.75;
+              
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              ctx.fillStyle = "black";
+              for (let i = 0; i < list.length; i++) {
+                ctx.fillRect(i * spacing, canvas.height, barWidth, -list[i]);
+              }
+            }
+            
+            /**
+             * A generator that sorts a list in steps.
+             * It yields every time an element gets put in its correct
+             * definitive position in the list
+             */
+            function *selectionSort(list) {
+              for (let i = 0; i < list.length; i++) {
+                // Find the index of the smallest number
+                // from list[i] to list[list.length-1]
+                let minI = i;
+                for (let j = i+1; j < list.length; j++) {
+                  if (list[j] < list[minI]) {
+                    minI = j;
+                  }
+                }
+                
+                // Swap list[i] with list[minI]
+                let temp = list[i];
+                list[i] = list[minI];
+                list[minI] = temp;
+                
+                yield;
+              }
+            }
+            
+            
+            // Let's test the algorithm:
+            {
+              const ANIMATION_INTERVAL = 100;
+              let list = randomIntegers({min: 0, max: 300, n: 100});
+            
+              let listSorter = selectionSort(list);
+            
+              function animationStep() {
+                plotList(list, ctx);
+                if ( !listSorter.next().done ) {
+                  setTimeout(animationStep, ANIMATION_INTERVAL)
+                }
+              }
+              
+              animationStep();
+            }
+        </script>
+        
+    </body>
+</html>
