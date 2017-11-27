@@ -21,5 +21,17 @@ header h1 {
 
 li {
 	padding: 0.5em;
+    background: linear-gradient(to right, #2196f3 0%, transparent 1%);
+    background-size: 100%;
+}
+
+li:hover {
+    transition: 0.2s;
+    background-size: 10000%;
+}
+
+li:hover>span {
+    transition: 0.2s;
+    color: #F9F9F9;
 }
 

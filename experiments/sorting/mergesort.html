@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Merge sort</title>
+
+    <style>
+        pre {
+            border: 1px solid black;
+            margin-left: 1em;
+            padding: 1ex;
+        }
+    </style>
+
+    <script>
+        function mergeSort(L, min, max) {
+            if ( typeof min === 'undefined' ) min = 0;
+            if ( typeof max === 'undefined' ) max = L.length - 1;
+
+            if (max > min) {
+                let middle = Math.floor( (max - min) / 2 ) + min;
+                mergeSort(L, min, middle);
+                mergeSort(L, middle + 1, max);
+                merge(L, min, middle, max);
+            }
+
+            return L;
+        }
+        
+        function merge(L, min, mid, max) {
+            let i = min,
+                j = mid + 1,
+                sorted = [];
+                
+            for (let k = min; k <= max; k++) {
+                if (j > max) {
+                    sorted[k] = L[i]; i++;
+                } else if (i > mid) {
+                    sorted[k] = L[j]; j++;
+                } else if (L[i] < L[j]) {
+                    sorted[k] = L[i]; i++;
+                } else {
+                    sorted[k] = L[j]; j++;
+                }
+            }
+
+            for (let k = min; k <= max; k++) {
+                L[k] = sorted[k];
+            }
+        }
+    </script>
+
+    
+</head>
+
+<body>
+    
+    <div id="content">
+        Unsorted list:
+        <pre id="unsorted-list"></pre>
+        Sorted list:
+        <pre id="sorted-list"></pre>
+    </div>
+
+    <script>
+        var unsortedListField = document.getElementById("unsorted-list");
+        var sortedListField = document.getElementById("sorted-list");
+        
+        var list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
+        unsortedListField.textContent = list;
+
+        mergeSort(list);
+        sortedListField.textContent = list;
+    </script>
+
+</body>
+
+</html>
