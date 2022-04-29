@@ -1,0 +1,14 @@
+<svg version="1.1"
+     baseProfiel="full"
+     width="50" height="50"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <rect id="rect"
+        x="0" y="40" width="50" height="10"
+        stroke="black" fill="none" stroke-width="5"/>
+
+  <path id="vert"
+        d="M 25 0 L 15 15 Z L 35 15 Z L 25 40"
+        stroke="black" stroke-width="3"/>
+
+</svg>

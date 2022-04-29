@@ -1,0 +1,38 @@
+figure {
+    height: 50px;
+    width: 200px;
+}
+
+figcaption {
+    font-size: larger;
+}
+
+.horizontal-list {
+    /* Reajustar a "sombra" para a altura mais pequena e o fundo mais escuro */
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.15) 15%,
+        rgba(0, 0, 0, 0.15) 80%,
+        rgba(0, 0, 0, 0.45) 95%
+    );
+}
+
+/* Desativar a animacao do hover nas atividades nao implementadas */
+figure.disabled {
+    opacity: 0.5;
+}
+figure.disabled:hover {
+    filter: none;
+    transform: none;
+}
+figure:not(.disabled):hover {
+    filter: brightness(125%);
+    transform: scale(1.10);
+}
+figure:not(.disabled):active {
+    filter: brightness(90%);
+    transform: scale(0.9);
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.40),
+                inset -1px -1px 1px rgba(0, 0, 0, 0.40),
+                1px 1px 10px rgba(0, 0, 0, 0.20);
+}

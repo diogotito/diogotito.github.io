@@ -1,0 +1,22 @@
+main {
+    width: 85%;
+    height: calc(100vh - 200px);
+    margin-left: 5%;
+    border: 1px solid black;
+    padding: 2.5%;
+    overflow: scroll;
+}
+
+
+
+.red {
+    color: red;
+    text-shadow: 0 1px 0.5px black
+}
+.you_were_banned {
+    color: yellow;
+}
+
+.you_entered {
+    color: blue;
+}

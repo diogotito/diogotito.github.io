@@ -1,0 +1,53 @@
+@import url("../ecra-comida/dialogo-personalizar.css");
+
+/* ajsutes aos valores do dialogo-personalizar.css */
+
+html {
+    background-color: #52AA5E;
+}
+
+fieldset {
+    display: block;
+    float: left;
+    width: calc(100% - 30px - 200px - 50px);
+}
+
+#finalizar-btn {
+    position: static;
+    padding: 0.5em 1em;
+    width: calc(100% - 200px - 50px);
+    clear: right;
+}
+
+/* personalizacoes especificas comecam aqui: */
+
+.radioButton {
+    margin: 0.5em;
+    padding: 0.25em;
+}
+
+.radioButton:hover {
+    background-color: rgba(165, 42, 42, 0.1);
+    border-radius: 500px;
+}
+
+.radioButton.disabled:hover {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+#wat {
+    float: right;
+    width: 200px;
+    filter: sepia(100%);
+    margin-right: 5px;
+    box-shadow: 0 0 5px 5px white;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>iPub - Personalizar Pedido</title>
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../global-ecras.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="dialogo-personalizar.css">
+		<script type="text/javascript" src="dadosComida.js"></script>
+		<script type="text/javascript" src="dialogoPersonalizar.js"></script>
+	</head>
+	<body>
+        <header>
+            <h1 id="nome-produto">Nome do produto</h1>
+            <select id="destinatario">
+                <option>Para mim</option>
+                <option>Para o João</option>
+                <option>Para a Maria</option>
+                <option>Para a Mariana</option>
+                <option>Para a Madalena</option>
+            </select>
+        </header>
+		<img id="ilustracao" src="imgs/menu/MenuFrango.jpeg">
+
+		<form id="controlos-personalizacao" method="get" action="../ecra-inicial/index.html">
+
+			<fieldset id="menu">
+				<legend>Personalize o seu menu</legend>
+
+				<div>
+					<label for="selectBebida">Bebida:</label>
+					<select id="selectBebida" name="bebida">
+						<option>Agua</option>
+						<option>Cerveja</option>
+						<option>Sangria</option>
+						<option>CocaCola</option>
+						<option>Sumol</option>
+						<option>Compal</option>
+					</select>
+				</div>
+
+				<div>
+					<label for="numberQuantidade">Para</label>
+					<input type="number" name="quantidade" min="1" max="6" value="1">
+					<label for="numberQuantidade">pessoa(s)</label>
+				</div>
+			</fieldset>
+
+			<fieldset id="variante">
+				<legend>Selecione <b>uma variante</b></legend>
+
+				<!-- Este div vai ser clonado à medida que for preciso -->
+				<div>
+					<input type="radio" name="variante">
+					<label></label>
+				</div>
+			</fieldset>
+
+			<fieldset id="opcionais">
+				<legend>Selecione as <b>opções</b> a incluir</legend>
+
+				<!-- Este div vai ser clonado à medida que for preciso -->
+				<div>
+					<input type="checkbox" name="opcionais">
+					<label></label>
+				</div>
+			</fieldset>
+
+            <footer>
+                <span id="preco" class="preco">123,45€</span>
+                <button id="finalizar-btn">Finalizar pedido</button>
+            </footer>
+		</form>
+	</body>
+</html>

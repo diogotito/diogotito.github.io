@@ -1,0 +1,16 @@
+<svg width="50" height="50"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <rect id="rect"
+        x="10" y="0" width="30" height="50"
+        stroke="black" fill="none" stroke-width="5"/>
+
+  <line id="diag"
+        x1="10" y1="50" x2="20" y2="40"
+        stroke="black" stroke-width="2" stroke-linecap="round"/>
+
+  <line id="vert"
+        x1="20" y1="40" x2="20" y2="0"
+        stroke="black" stroke-width="2" stroke-linecap="round"/>
+
+</svg>

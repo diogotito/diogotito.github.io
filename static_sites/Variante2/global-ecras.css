@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    width: 100%;
+    height: calc(100% - 50px);
+    margin: 0;
+    background-color: #52AA5E;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+	width: 100%;
+	text-align: center;
+}
+
+h1, h2, h3 {
+	font-family: 'Raleway', sans-serif;
+}
+
+
+/* fixeza */
+
+h2 {
+    display: block;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+    border-bottom: 1px solid black;
+    margin-bottom: 0;
+}
+
+h2:after {
+    content: "▼";
+    margin-left: 0.25em;
+}
+
+section {
+    margin-bottom: 5em;
+}
+
+.horizontal-list {
+    width: 100%;
+    overflow-x: scroll;
+    float: left;
+    white-space: nowrap;
+    margin-bottom: 3em;
+    
+    padding: 20px 0px;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.40) 0%,
+        rgba(0, 0, 0, 0.10) 10%,
+        rgba(0, 0, 0, 0.10) 85%,
+        rgba(0, 0, 0, 0.40) 100%
+    );
+    
+    transition: 0.25s;
+}
+
+.closed {
+    transition: 0.25s;
+    overflow: hidden;
+    height: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+figure {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 1em;
+    
+    background-color: beige;
+    color: black;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.40),
+                inset -1px -1px 1px rgba(0, 0, 0, 0.40),
+                5px 5px 20px rgba(0, 0, 0, 0.40);
+    
+    transition: 0.1s;
+}
+figure:hover {
+    filter: brightness(105%);
+    transform: scale(1.025);
+}
+figure:active {
+    filter: brightness(90%);
+    transform: scale(0.9);
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.40),
+                inset -1px -1px 1px rgba(0, 0, 0, 0.40),
+                1px 1px 10px rgba(0, 0, 0, 0.20);
+}
+
+figure img {
+    height: 100%;
+    float: left;
+    
+    border-radius: 10px;
+}
+
+figcaption {
+    float: right;
+    width: 140px;
+    white-space: normal;
+}
+

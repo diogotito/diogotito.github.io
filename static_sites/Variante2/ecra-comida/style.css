@@ -1,0 +1,53 @@
+/* Estamos no ecrã "Pedir Comida". A cor do fundo deve estar a condizer. */
+body {
+    background-color: #8ACE8E;
+}
+
+h3, .descricao, .preco {
+    font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+    margin: 0 0 0.25em 0;
+    border-bottom: 1px solid black;
+}
+
+.descricao {
+    font-size: small;
+    color: #3c2a1b;
+    padding-left: 1px;
+}
+
+.descricao ul {
+    margin-top: 0;
+    padding-left: 1px;
+    list-style: none;
+    
+}
+
+.descricao li:before {
+    content: "•"; /* Is this the real life? */
+    font-weight: 900; /*is this just fantasy? */
+    margin-right: 0.5em;
+}
+
+.preco {
+    position: absolute;
+    bottom: 10px;
+    width: 120px;
+    padding: 5px 10px;
+    text-align: right;
+    
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: rgba(32, 64, 0, 0.2);
+}
+
+.preco:before {
+    content: "Preço: ";
+    font-weight: 400;
+    float: left;
+}
+
+
+
