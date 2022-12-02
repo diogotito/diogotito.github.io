@@ -27,7 +27,7 @@
 
     <!-- have a button POST a click via AJAX -->
     <button
-      hx-post="partials/replace-button.html"
+      hx-get="partials/replace-button.html"
       hx-target="#such-target"
       hx-swap="innerHTML"
     >
@@ -36,7 +36,7 @@
 
     <a
       href="#"
-      hx-post="partials/cool-blue-link.html"
+      hx-get="partials/cool-blue-link.html"
       hx-target="#such-target"
       hx-swap="innerHTML"
     >
@@ -47,7 +47,7 @@
 
     <a
       href="#"
-      hx-post="partials/yellow-page.html"
+      hx-get="partials/yellow-page.html"
       hx-target="#such-target"
       hx-swap="innerHTML"
       class="yellow-link"
@@ -56,5 +56,6 @@
     </a>
 
     <h2>outer h2</h2>
+    Now using GET!
   </body>
 </html>
