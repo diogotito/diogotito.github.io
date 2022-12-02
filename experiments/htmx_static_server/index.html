@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tenho HTMX</title>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <style>
+      #such-target {
+        border: 2px dotted blue;
+        margin: 1em;
+        padding: 0.5em;
+      }
+      .yellow-link {
+        background-color: yellow;
+        border: 5px double green;
+        padding: 2px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    yoooooo
+
+    <!-- have a button POST a click via AJAX -->
+    <button
+      hx-post="/partials/replace-button.html"
+      hx-target="#such-target"
+      hx-swap="innerHTML"
+    >
+      Click Me
+    </button>
+
+    <a
+      href="#"
+      hx-post="/partials/cool-blue-link.html"
+      hx-target="#such-target"
+      hx-swap="innerHTML"
+    >
+      I'm a link
+    </a>
+
+    <main id="such-target">replace me motherfaker</main>
+
+    <a
+      href="#"
+      hx-post="/partials/yellow-page.html"
+      hx-target="#such-target"
+      hx-swap="innerHTML"
+      class="yellow-link"
+    >
+      yellow pages
+    </a>
+
+    <h2>outer h2</h2>
+  </body>
+</html>

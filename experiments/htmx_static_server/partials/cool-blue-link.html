@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h2::after {
+        content: "cool-blue-link.html \a html > head > style \a h2::after ";
+        white-space: pre;
+
+        display: inline-block;
+        padding: 0.5em;
+        background: linear-gradient(to left, #ddd, transparent 75%);
+        border: 1px solid gray;
+        border-left: none;
+        border-radius: 0 1em 1em 0;
+
+        transform: translateY(5px);
+
+        font-size: x-small;
+        line-height: 10px;
+        font-family: "Courier New", Courier, monospace;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <style>
+        h2::before {
+          content: "cool-blue-link.html \a html > body > header > style \a h2::before ";
+          white-space: pre;
+
+          display: inline-block;
+          padding: 0.5em;
+          background: linear-gradient(to right, #ddd, transparent 75%);
+          border: 1px solid gray;
+          border-right: none;
+          border-radius: 1em 0 0 1em;
+
+          transform: translateY(5px);
+
+          font-size: x-small;
+          line-height: 10px;
+          font-family: "Courier New", Courier, monospace;
+          color: gray;
+        }
+      </style>
+      <hgroup>
+        <h1>I'm making a standalone document here</h1>
+        <h2>to mess up with HTMX</h2>
+      </hgroup>
+    </header>
+  </body>
+</html>
