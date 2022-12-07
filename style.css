@@ -4,9 +4,11 @@ html {
 }
 
 body {
-	background-color: #F9F9F9; /* white */
-	color: #212121;
-	font-family: 'Open Sans', sans-serif; /* TODO spend time choosing fonts */
+    background-color: #F9F9F9;
+    /* white */
+    color: #212121;
+    font-family: 'Open Sans', sans-serif;
+    /* TODO spend time choosing fonts */
     padding: 2em;
     border-radius: 2em;
 }
@@ -17,10 +19,39 @@ header {
 
 header h1 {
     margin-bottom: 0.25em;
+    text-align: center;
+}
+
+header nav ul {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+}
+
+.projects {
+    flex: 1 0 auto;
+}
+
+.projects.projects--game-jams dt {
+    font-weight: bold;
+}
+
+.projects.projects--game-jams dd+dt {
+    margin-top: 1em;
+}
+
+.projects.projects--game-jams a {
+    margin: 0.5em;
 }
 
 li {
-	padding: 0.5em;
+    padding: 0.5em;
     background: linear-gradient(to right, #2196f3 0%, transparent 1%);
     background-size: 100%;
 }
@@ -34,4 +65,3 @@ li:hover>span {
     transition: 0.2s;
     color: #F9F9F9;
 }
-
