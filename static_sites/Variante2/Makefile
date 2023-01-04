@@ -1,3 +1,5 @@
+all: sync
+
 sync: google-drive pineman
 		
 
