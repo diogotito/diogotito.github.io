@@ -76,11 +76,7 @@ main {
     margin-top: 2em;
 }
 
-.projects.projects--game-jams a {
-    margin: 0.5em;
-}
-
-li {
+li, dd a {
     padding: 0.5em;
     background: linear-gradient(to right, #2196f3 0%, transparent 1%);
     background-size: 100%;
@@ -88,7 +84,7 @@ li {
     background-repeat: no-repeat
 }
 
-li:hover {
+li:hover, dd a:hover {
     background-position-x: 0px;
     background-size: 10000%;
     transition: 0.2s;
