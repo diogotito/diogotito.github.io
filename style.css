@@ -1,26 +1,41 @@
 html {
     background-color: #424242;
-    margin: 1rem;
+    margin: 2rem;
 }
 
 body {
     background-color: #F9F9F9;
-    /* white */
     color: #212121;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
-    /* TODO spend time choosing fonts */
     padding: 2rem;
     border-radius: 2rem;
 }
 
+@media (orientation: portrait) {
+    html {
+        background-color: #F9F9F9;
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    .projects {
+        /* How do I avoid !important? (specificity doesn't work) */
+        box-shadow: none !important;
+        background: none !important;
+    }
+}
 
 header h1 {
-    margin-bottom: 0.25rem;
     text-align: center;
+    margin-bottom: 0;
 }
 
 header nav ul {
+    margin-top: 0;
     display: flex;
     gap: 10ch;
     justify-content: center;
@@ -76,7 +91,6 @@ main {
 @supports not (display: grid) {
     main {
         display: inline-block;
-        border: 3px dashed blue;
     }
 
     .projects {
