@@ -1,6 +1,6 @@
 html {
     background-color: #424242;
-    margin: 1em;
+    margin: 1rem;
 }
 
 body {
@@ -10,48 +10,107 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
     /* TODO spend time choosing fonts */
-    padding: 2em;
-    border-radius: 2em;
+    padding: 2rem;
+    border-radius: 2rem;
 }
 
-header {
-}
 
 header h1 {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.25rem;
     text-align: center;
 }
 
 header nav ul {
     display: flex;
-    justify-content: space-evenly;
+    gap: 10ch;
+    justify-content: center;
 }
 
 main {
-    margin-top: 2em;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30ch, 1fr));
-    grid-template-rows: masonry;
-    gap: 2em;
+    gap: 2rem;
 }
 
+@supports (grid-template-rows: masonry) {
+    main {
+        grid-template-rows: masonry;
+    }
+}
+
+@supports (display: grid) and (not (grid-template-rows: masonry)) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10ch, auto));
+        grid-auto-flow: row dense;
+        justify-content: center;
+    }
+
+    .projects.projects--game-jams {
+        grid-row-end: span 13;
+        grid-column-end: span 3;
+    }
+
+    .projects.projects--repos {
+        grid-row-end: span 4;
+        grid-column-end: span 3;
+    }
+
+    .projects.projects--blog {
+        grid-row-end: span 4;
+        grid-column-end: span 3;
+    }
+
+    .projects.projects--smaller {
+        grid-row-end: span 8;
+        grid-column-end: span 3;
+    }
+
+    .projects.projects--assorted {
+        grid-row-end: span 10;
+        grid-column-end: span 3;
+    }
+}
+
+@supports not (display: grid) {
+    main {
+        display: inline-block;
+        border: 3px dashed blue;
+    }
+
+    .projects {
+        float: left;
+        margin: 0 1rem 1rem 0;
+    }
+
+    main::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+
 .projects {
-    padding: 1em;
-/*     margin-top: 2em; */
+    padding: 1rem;
     width: auto;
     height: max-content;
-    
-    border-radius: 1em;
+    border-radius: 1rem;
+}
+
+main:hover .projects:hover,
+main:not(:hover) .projects {
     box-shadow:
         2px -2px 2px rgb(250 250 250 / .90),
         inset -2px 2px 2px rgb(222 222 222 / .8),
         -2px 2px 2px rgb(222 222 222 / .5),
         inset 2px -2px 2px rgb(253 253 253 / .96);
-    transition: 2s;
+    transition: 0.5s;
 }
 
-.projects:hover {
-    transition: 0.4s;
+main:hover .projects:not(:hover) {
+    transition: 2s;
     background-color: #F0F0F0;
     box-shadow:
         2px -2px 2px rgb(250 250 250 / .2),
@@ -65,7 +124,7 @@ main {
 }
 
 .projects.projects--game-jams h2 {
-    margin-bottom: 1.25em;
+    margin-bottom: 1.25rem;
 }
 
 .projects.projects--game-jams dt {
@@ -73,18 +132,20 @@ main {
 }
 
 .projects.projects--game-jams dd+dt {
-    margin-top: 2em;
+    margin-top: 2rem;
 }
 
-li, dd a {
-    padding: 0.5em;
+li,
+dd a {
+    padding: 0.5rem;
     background: linear-gradient(to right, #2196f3 0%, transparent 1%);
     background-size: 100%;
     background-position-x: -20px;
     background-repeat: no-repeat
 }
 
-li:hover, dd a:hover {
+li:hover,
+dd a:hover {
     background-position-x: 0px;
     background-size: 10000%;
     transition: 0.2s;
