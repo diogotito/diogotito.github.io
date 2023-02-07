@@ -169,3 +169,8 @@ li:hover>span {
     transition: 0.2s;
     color: #F9F9F9;
 }
+
+a.more {
+    float: right;
+    text-decoration: none;
+}
