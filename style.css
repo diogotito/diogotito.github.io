@@ -143,6 +143,9 @@ main:hover .projects:not(:hover) {
 
 .projects.projects--game-jams dt {
     font-weight: bold;
+    display: list-item;
+    list-style-type: circle;
+    margin-left: 1.5em;
 }
 
 .projects.projects--game-jams dd+dt {
