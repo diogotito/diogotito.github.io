@@ -1,0 +1,3 @@
+[submodule "experiments/fireworks-gl-experiment"]
+	path = experiments/fireworks-gl-experiment
+	url = https://github.com/diogotito/fireworks-gl-experiment.git
