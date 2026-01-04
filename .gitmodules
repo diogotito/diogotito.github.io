@@ -1,3 +1,8 @@
 [submodule "experiments/fireworks-gl-experiment"]
 	path = experiments/fireworks-gl-experiment
 	url = https://github.com/diogotito/fireworks-gl-experiment.git
+	branch = simpler
+[submodule "experiments/fireworks-gl-experiment-2"]
+	path = experiments/fireworks-gl-experiment-2
+	url = https://github.com/diogotito/fireworks-gl-experiment.git
+	branch = sphere-ish
