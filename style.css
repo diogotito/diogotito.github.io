@@ -148,6 +148,12 @@ main:hover .projects:not(:hover) {
     margin-left: 1.5em;
 }
 
+.projects.projects--game-jams dt .jam {
+    font-weight: normal;
+    float: right;
+    opacity: 50%;
+}
+
 .projects.projects--game-jams dd+dt {
     margin-top: 2rem;
 }
