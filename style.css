@@ -18,23 +18,19 @@ a {
 }
 
 html {
-    margin: 2rem;
+    margin: 2rem 3rem 0.5rem;
 }
 
 body {
     background-image: linear-gradient(calc(0.5turn - 0.25turn / 8),
-            color-mix(in srgb, var(--bg-body), transparent 50%) 0,
-            var(--bg-body) 25%);
-
-    &>* {
-        z-index: 2;
-    }
+            color-mix(in srgb, var(--bg-body), transparent 40%) 0,
+            var(--bg-body) 45rch);
 
     color: var(--fg);
     font-family: 'Open Sans',
-    sans-serif;
+        sans-serif;
     line-height: 1.5;
-    padding: 2rem;
+    padding: 1rem 4.5rem 2rem;
     border-radius: 2rem;
 }
 
@@ -47,6 +43,23 @@ body {
                 var(--bg-checkered-b1) 0.50turn, var(--bg-checkered-b1) 0.75turn,
                 var(--bg-checkered-b2) 0.75turn, var(--bg-checkered-b2) 1.00turn);
         background-size: var(--bg-size) var(--bg-size);
+    }
+
+    body {
+        padding-left: clamp(0.5rem, 5%, 4.5rem);
+        padding-right: clamp(0.5rem, 5%, 4.5rem);
+    }
+
+    header {
+        padding: 0 3rem;
+    }
+
+    header nav ul {
+        column-gap: 1rem;
+    }
+
+    main {
+        margin: 2rem 0 1.5rem;
     }
 }
 
@@ -67,10 +80,6 @@ body {
     }
 }
 
-header {
-    padding: 0 3rem;
-}
-
 header h1 {
     color: #3a3a3a;
     text-align: center;
@@ -81,33 +90,28 @@ header nav ul {
     padding: 0;
     display: flex;
     flex-flow: row wrap;
-    column-gap: 3rem;
-    row-gap: 1.5rem;
+    column-gap: 2rem;
     justify-content: center;
     list-style: none;
     margin-top: 0.5rem;
     margin-bottom: 3rem;
 
     & li {
-        padding: 0;
+        padding: 0.5rem;
     }
 }
 
 main {
-    margin: 2rem 3rem 2rem;
-
     display: block;
     column-width: 45rch;
     column-count: 5;
     column-fill: balance-all;
+    column-gap: 3rem;
 
     & .projects {
         break-inside: avoid;
     }
 
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 3rem;
 
     container-type: inline-size;
 }
