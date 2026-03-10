@@ -143,25 +143,27 @@ main {
     }
 }
 
-.projects:not(:hover) {
-    transition-duration: 2s;
-    transition-property: box-shadow, background;
-    box-shadow:
-        2px -2px 2px rgb(250 250 250 / .90),
-        inset -2px 2px 2px rgb(222 222 222 / .8),
-        -2px 2px 2px rgb(222 222 222 / .5),
-        inset 2px -2px 2px rgb(253 253 253 / .96);
-}
+@media (hover: hover) {
+    .projects:not(:hover) {
+        transition-duration: 2s;
+        transition-property: box-shadow, background;
+        box-shadow:
+            2px -2px 2px rgb(250 250 250 / .90),
+            inset -2px 2px 2px rgb(222 222 222 / .8),
+            -2px 2px 2px rgb(222 222 222 / .5),
+            inset 2px -2px 2px rgb(253 253 253 / .96);
+    }
 
-.projects:hover {
-    transition-duration: 2s;
-    transition-property: box-shadow, background;
-    background-color: var(--bg-card);
-    box-shadow:
-        2px -2px 2px rgb(250 250 250 / .2),
-        inset -2px 2px 2px rgb(222 222 222 / .6),
-        -2px 2px 2px rgb(222 222 222 / .4),
-        inset 2px -2px 2px rgb(253 253 253 / .2);
+    .projects:hover {
+        transition-duration: 2s;
+        transition-property: box-shadow, background;
+        background-color: var(--bg-card);
+        box-shadow:
+            2px -2px 2px rgb(250 250 250 / .2),
+            inset -2px 2px 2px rgb(222 222 222 / .6),
+            -2px 2px 2px rgb(222 222 222 / .4),
+            inset 2px -2px 2px rgb(253 253 253 / .2);
+    }
 }
 
 .projects h2 {
