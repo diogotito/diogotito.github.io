@@ -131,6 +131,7 @@ main {
     border-radius: 1rem;
 }
 
+/* Force column breaks at specific cards
 @container (width >=calc(4*45rch + 3*3rem)) {
     .card:nth-last-child(1) {
         break-before: column;
@@ -144,6 +145,7 @@ main {
         margin-top: 0;
     }
 }
+*/
 
 @media (hover: hover) {
     .card:not(:hover) {
