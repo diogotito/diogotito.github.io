@@ -207,7 +207,6 @@ h2.card, .card > h2 {
     & dt {
         display: flex;
         align-items: center;
-        margin-bottom: 0.5rem;
         break-after: avoid;
     }
 
@@ -234,8 +233,21 @@ h2.card, .card > h2 {
         }
     }
 
+    & dd {
+        display: flex;
+        justify-content: left;
+        gap: 0.5em;
+        margin-left: 1.0em;
+    }
 }
 
+/* hack for working around Firefox not supporting break-after: avoid */
+@supports not (break-after: avoid-column) {
+    .projects--game-jams dd {
+        height: 0;
+        margin-bottom: 5em; /* by trial and error */
+    }
+}
 
 li,
 dd a {
