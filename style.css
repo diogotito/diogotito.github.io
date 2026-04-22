@@ -208,12 +208,12 @@ h2.card, .card > h2 {
         display: flex;
         align-items: center;
         margin-bottom: 0.5rem;
+        break-after: avoid;
     }
 
     & dd+dt { margin-top: 2.5rem }
 
     & dt h3 { color: #111 }
-
     
     & dt .jam {
         display: contents;
