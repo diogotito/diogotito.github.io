@@ -14,7 +14,9 @@
 }
 
 a {
-    color: #1072c2;
+    color: #0240bb;
+    text-decoration: underline dotted var(--fancy-link-gradient-color) 10%;
+    text-underline-offset: 15%;
 }
 
 html {
@@ -73,7 +75,7 @@ body {
         padding: 0;
     }
 
-    .projects {
+    .card {
         /* How do I avoid !important? (specificity doesn't work) */
         box-shadow: none !important;
         background: none !important;
@@ -108,7 +110,7 @@ main {
     column-fill: balance-all;
     column-gap: 3rem;
 
-    & .projects {
+    & .card {
         break-inside: avoid;
     }
 
@@ -116,12 +118,12 @@ main {
     container-type: inline-size;
 }
 
-.projects {
+.card {
     &:not(:first-child) {
         margin-top: 3rem;
     }
 
-    &:not(:last-child) {
+    &:not(:last-child, h2) {
         margin-bottom: 3rem;
     }
 
@@ -130,21 +132,21 @@ main {
 }
 
 @container (width >=calc(4*45rch + 3*3rem)) {
-    .projects:nth-last-child(1) {
+    .card:nth-last-child(1) {
         break-before: column;
         margin-top: 0;
     }
 }
 
 @container (width >=calc(5*45rch + 4*3rem)) {
-    .projects:nth-last-child(-n+3) {
+    .card:nth-last-child(-n+3) {
         break-before: column;
         margin-top: 0;
     }
 }
 
 @media (hover: hover) {
-    .projects:not(:hover) {
+    .card:not(:hover) {
         transition-duration: 2s;
         transition-property: box-shadow, background;
         box-shadow:
@@ -154,7 +156,7 @@ main {
             inset 2px -2px 2px rgb(253 253 253 / .96);
     }
 
-    .projects:hover {
+    .card:hover {
         transition-duration: 2s;
         transition-property: box-shadow, background;
         background-color: var(--bg-card);
@@ -166,40 +168,74 @@ main {
     }
 }
 
-.projects h2 {
+/* Oh no, I participated in too many game jams already
+and they no longer fit naturally in a single column
+:cry-emoji: */
+
+h2.card, .card > h2 {
     color: #333;
     text-align: center;
     margin-top: 0;
-    border-bottom: 1px solid rgb(128 128 128);
+    border-bottom: 1px solid darkgrey;
 }
 
-.projects.projects--game-jams h2 {
-    margin-bottom: 1.25rem;
+.projects:not(.card) {
+    display: contents;
+    
+    & > * {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
 }
 
-.projects.projects--game-jams dt {
-    font-weight: bold;
-    display: list-item;
-    list-style-type: circle;
-    margin-left: 1.5em;
+.projects--game-jams {
+
+    & :is(h2, h3) { margin: 0 }
+    & .card { margin-bottom: 2em }
+
+    & ul.games-links {
+        display: flex;
+        column-gap: 1em;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        list-style: none;
+        
+        & a::after { content: "\00a0\21f2"}
+    }
+
+    & dt {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    & dd+dt { margin-top: 2.5rem }
+
+    & dt h3 { color: #111 }
+
+    
+    & dt .jam {
+        display: contents;
+        color: gray;
+
+        /* - - - - - - - */
+        &::before {
+            flex: 1;
+            content: "";
+            border-top: 0.10em dotted darkgray;
+            margin: 0 1.0ex 0 1.2ex;
+        }
+        
+        & time {
+            margin-left: 1ex;
+            &::before { content: "["; position: relative; bottom: 1px; }
+            &::after  { content: "]"; position: relative; bottom: 1px; }
+        }
+    }
+
 }
 
-.projects.projects--game-jams dt .jam {
-    font-weight: normal;
-    float: right;
-    opacity: 50%;
-}
-
-.projects.projects--game-jams dd+dt {
-    margin-top: 2rem;
-}
-
-.projects.projects--game-jams ul.games-links {
-    display: flex;
-    list-style: none;
-    justify-content: end;
-    margin: 0;
-}
 
 li,
 dd a {
